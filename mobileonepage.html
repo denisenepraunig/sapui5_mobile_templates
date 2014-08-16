@@ -32,13 +32,11 @@
         oButton.setText("Hello World!");
 
         // attach an action to the button's "press" event (use jQuery to fade out the button)
-        myButton.attachPress(function(){$("#btn").fadeOut()});
-
-        oButton.placeAt("uiArea");
+        oButton.attachPress(function(){$("#btn").fadeOut()});
 
         oPage.addContent(oButton);
 
-        app.addPage(page1);
+        app.addPage(oPage);
 
         app.placeAt("uiArea");
     </script>
