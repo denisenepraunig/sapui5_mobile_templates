@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+
+    <title>SAPUI5 Template</title>
+
+    <script id="sap-ui-bootstrap"
+            src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_bluecrystal"
+            data-sap-ui-libs="sap.m, sap.ui.layout"
+            data-sap-ui-xx-bindingSyntax="complex" >
+    </script>
+
+    <script>
+        // example with one mobile page
+
+        // based on those guides
+        // http://help.sap.com/saphelp_nw74/helpdata/de/8b/49fc198bf04b2d9800fc37fecbb218/content.htm
+
+        var app = new sap.m.App("myApp", {initialPage:"page1"});
+
+        var oPage = new sap.m.Page("page1", {
+            title: "Initial Page"
+        });
+
+        // create the button instance
+        var oButton = new sap.m.Button("btn");
+
+        // set properties
+        oButton.setText("Hello World!");
+
+        // attach an action to the button's "press" event (use jQuery to fade out the button)
+        myButton.attachPress(function(){$("#btn").fadeOut()});
+
+        oButton.placeAt("uiArea");
+
+        oPage.addContent(oButton);
+
+        app.addPage(page1);
+
+        app.placeAt("uiArea");
+    </script>
+
+</head>
+<body class="sapUiBody" role="application" id="uiArea">
+</body>
+</html>
