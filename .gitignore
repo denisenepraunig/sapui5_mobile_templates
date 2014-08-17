@@ -6,3 +6,6 @@
 .idea/workspace.xml
 .idea/scopes/scope_settings.xml
 .idea/sapui5_templates.iml
+/aceditor/*
+/playground/*
+/snippets/*
