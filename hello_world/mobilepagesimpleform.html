@@ -15,8 +15,7 @@
 
     <script>
         // example with a form
-
-
+        // at the end of the page there is the corresponding xml view as a comment
         var app = new sap.m.App("helloWorldApp", {initialPage:"page1"});
 
         // --- create page 1 ---
@@ -27,7 +26,6 @@
         oPage1.addStyleClass("sapUiFioriObjectPage");
 
         // create the form instance
-
         var oSimpleForm = new sap.ui.layout.form.SimpleForm({
             minWidth: 1024,
             maxContainerCols : 2,
@@ -42,10 +40,9 @@
             ]
         });
 
-        //oPage1.addContent(oButton1).addContent(oSimpleForm);
         oPage1.addContent(oSimpleForm);
 
-        // --- add both pages ---
+        // --- add page ---
         app.addPage(oPage1);
 
         app.placeAt("uiArea");
