@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+
+    <title>SAPUI5 Template</title>
+
+    <script id="sap-ui-bootstrap"
+            src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+            data-sap-ui-theme="sap_bluecrystal"
+            data-sap-ui-libs="sap.m, sap.ui.layout"
+            data-sap-ui-xx-bindingSyntax="complex" >
+    </script>
+
+    <script>
+        // example with two mobile pages
+
+        // based on those guides
+        // http://help.sap.com/saphelp_nw74/helpdata/de/8b/49fc198bf04b2d9800fc37fecbb218/content.htm
+
+        var app = new sap.m.App("helloWorldApp", {initialPage:"page1"});
+
+        // --- create page 1 ---
+        var oPage1 = new sap.m.Page("page1", {
+            title: "Hello World Page 1"
+        });
+
+        // create the button instance
+        var oButton1 = new sap.m.Button("btnHelloWorld");
+
+        // set properties
+        oButton1.setText("Go to page 2");
+
+        // attach an action to the button's "press" event (use jQuery to fade out the button)
+        oButton1.attachPress(function() {
+            // when pressed, it triggers drilldown to page 2
+            app.to("page2");
+        });
+
+        //oPage1.addContent(oButton1).addContent(oSimpleForm);
+        oPage1.addContent(oButton1);
+
+        // --- create page 2 ---
+        // here now with a shorter notation, syntactically it is the same like the example above
+        // instead of oPage2.addContent(...) we define it with new sap.m.Page("...", { content: ... });
+
+        var oPage2 = new sap.m.Page("page2", {
+            title: "Hello World Page 2",
+
+            // page 2 should display a back button
+            showNavButton: true,
+
+            navButtonPress: function(){
+                // when tapped, the back button should navigate back up to page 1
+                app.back();
+            },
+            content : new sap.m.Text({text:"Hello Mobile World - on the second page!"})
+        });
+
+        // --- add both pages ---
+        app.addPage(oPage1).addPage(oPage2);
+
+        app.placeAt("uiArea");
+    </script>
+
+</head>
+<body class="sapUiBody" role="application" id="uiArea">
+</body>
+</html>
