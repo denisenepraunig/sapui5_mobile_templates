@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>My Fiori 0</title>
+
+        <script>
+            /*
+
+            This whole template is based on DJ Adam's @qmacro
+            "Building SAP Fiori-like UIs with SAPUI5" guide
+
+            Many thanks for your effort!!!
+            One of your biggest fans,
+            Denise Nepraunig @denisenepraunig
+
+             http://scn.sap.com/community/developer-center/front-end/blog/2014/03/04/building-sap-fiori-like-uis-with-sapui5-in-10-exercises
+
+             */
+
+        </script>
+
+		<script
+			id="sap-ui-bootstrap"
+			src="https://sapui5.hana.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-resourceroots='{
+				"com.nepraunig.fioristart": "./"
+			}' >
+		</script>
+
+		<script>
+            new sap.m.Shell({
+                app : new sap.ui.core.ComponentContainer({
+                    name : "com.nepraunig.fioristart"
+                })
+            }).placeAt("uiArea");
+
+		</script>
+
+	</head>
+    <body class="sapUiBody" role="application" id="uiArea">
+	</body>
+</html>
