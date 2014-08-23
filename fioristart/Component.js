@@ -5,6 +5,14 @@ sap.ui.core.UIComponent.extend("com.nepraunig.fioristart.Component", {
 	createContent : function() {
 
 		// create root view
+
+        /* https://sapui5.hana.ondemand.com/sdk/docs/guide/91f277516f4d1014b6dd926db0e91070.html
+        */
+
+        /* viewData
+
+        Only used for JS views; this property contains user-specific data that is available during the whole lifecycle of the view and the controller
+        */
 		var oView = sap.ui.view({
 			id : "app",
 			viewName : "com.nepraunig.fioristart.view.App",
